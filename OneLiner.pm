@@ -27,7 +27,11 @@ our $TIMEO    = 20;
 
 sub send_mail {
     my ($from, $to, $subj, $msg, $cc, $bcc, $labl) = @_;
-    my $smtp = Net::SMTP->new($HOSTNAME, Hello=>$ELHO, Timeout=>$TIMEO, Debug=>$DEBUG) or croak $!;
+
+    my $to_hit = $HOSTNAME;
+       $to_hit .= ":$PORT" if $PORT ne "25";
+
+    my $smtp = Net::SMTP->new($to_hit, Hello=>$ELHO, Timeout=>$TIMEO, Debug=>$DEBUG) or croak $!;
 
     $to  = [ $to  ] unless ref $to;
     $cc  = [ $cc  ] unless ref $cc;
@@ -105,7 +109,7 @@ The values listed are the defaults.
 =head2 $Net::SMTP::OneLiner::HOSTNAME = "localhost"
 
 The hostname of the SMTP server you wish to use.
-j
+ 
 =head2 $Net::SMTP::OneLiner::PORT = 25;
 
 The port on the smtp server you wish to use.
