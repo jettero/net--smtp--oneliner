@@ -1,0 +1,3 @@
+1.2.0: Tue Aug 23 07:05:38 EDT 2005
+   - I made cc and bcc work just like to.  You can also send messages with only bcc's.
+     Lastly, bcc's weren't working at all until I fixed the bug pointed out by Stephen Thomas.
