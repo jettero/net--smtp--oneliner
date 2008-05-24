@@ -4,7 +4,7 @@
 use strict;
 use Test;
 
-unless( $ENV{HOSTNAME} =~ m/^corky/ and $ENV{USER} eq "jettero" ) {
+if( $ENV{SKIP_07} or not($ENV{HOSTNAME} =~ m/^corky/ and $ENV{USER} eq "jettero") ) {
     plan tests => 1;
     skip(1,0,1);
     exit;
