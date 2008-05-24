@@ -13,9 +13,12 @@ require Exporter;
 our @ISA = qw(Exporter);
 
 our @EXPORT = qw( send_mail );
-our $VERSION = '1.2.0';
+
+use version;
+our $VERSION = version->new('1.2.0')->numify;
 
 our $HOSTNAME = "localhost";
+our $PORT     = 25;
 our $ELHO     = "localhost";
 our $DEBUG    = 0;
 our $TIMEO    = 20;
@@ -102,6 +105,10 @@ The values listed are the defaults.
 =head2 $Net::SMTP::OneLiner::HOSTNAME = "localhost"
 
 The hostname of the SMTP server you wish to use.
+j
+=head2 $Net::SMTP::OneLiner::PORT = 25;
+
+The port on the smtp server you wish to use.
 
 =head2 $Net::SMTP::OneLiner::EHLO = "localhost"
 
@@ -126,24 +133,20 @@ is not the case, he would like to know, so he can fix it.
 
 BCC: recipients were not working at all!  Thanks to Stephen Thomas for finding this bug.
 
-=head1 Author
+=head1 AUTHOR
 
-Jettero Heller jettero@cpan.org
+Paul Miller <paul@cpan.org>
+
+I am using this software in my own projects...  If you find bugs, please
+please please let me know. :) Actually, let me know if you find it handy at
+all.  Half the fun of releasing this stuff is knowing that people use it.
 
 =head1 COPYRIGHT
 
-    GPL!  I included a gpl.txt for your reading enjoyment.
+Copyright (c) 2007 Paul Miller -- LGPL [attached]
 
-    Though, additionally, I will say that I'll be tickled if you were to
-    include this package in any commercial endeavor.  Also, any thoughts to
-    the effect that using this module will somehow make your commercial
-    package GPL should be washed away.
+=head1 SEE ALSO
 
-    I hereby release you from any such silly conditions.
-
-    This package and any modifications you make to it must remain GPL.  Any
-    programs you (or your company) write shall remain yours (and under
-    whatever copyright you choose) even if you use this package's intended
-    and/or exported interfaces in them.
+perl(1)
 
 =cut
