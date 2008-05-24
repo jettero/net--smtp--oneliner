@@ -1,6 +1,6 @@
-1.2.1: Sat May 24 10:28:16 EDT 2008
+1.3.0: Sat May 24 10:28:16 EDT 2008
    - using version.pm as suggested by Andreas Koenig
-   - added a port option
+   - added a PORT option, which arguably already existed in HOSTNAME
 
 1.2.0: Tue Aug 23 07:05:38 EDT 2005
    - I made cc and bcc work just like to.  You can also send messages with only bcc's.

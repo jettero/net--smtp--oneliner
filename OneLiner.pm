@@ -108,11 +108,13 @@ The values listed are the defaults.
 
 =head2 $Net::SMTP::OneLiner::HOSTNAME = "localhost"
 
-The hostname of the SMTP server you wish to use.
+The hostname of the SMTP server you wish to use.  This takes all the arguments
+you'd expect a IO::Socket::INET object to take.
  
 =head2 $Net::SMTP::OneLiner::PORT = 25;
 
-The port on the smtp server you wish to use.
+The port on the smtp server you wish to use.  If you use this, do not set the
+port in $Net::SMTP::OneLiner::HOSTNAME or you will create bugs for yourself.
 
 =head2 $Net::SMTP::OneLiner::EHLO = "localhost"
 
