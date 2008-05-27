@@ -1,3 +1,6 @@
+1.3.2: Tue May 27 07:30:11 EDT 2008
+   - still forgot the version.pm
+
 1.3.1: Mon May 26 15:42:56 EDT 2008
    - I might as well do a new version of everything using
      version.pm while I wait for all my CPAN deletes to go
