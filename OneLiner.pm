@@ -14,7 +14,7 @@ our @ISA = qw(Exporter);
 
 our @EXPORT = qw( send_mail );
 
-use version; our $VERSION = qv('1.3.2');
+use version; our $VERSION = qv('1.3.3');
 
 our $HOSTNAME = "localhost";
 our $PORT     = 25;
