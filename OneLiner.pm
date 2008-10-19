@@ -14,7 +14,7 @@ our @ISA = qw(Exporter);
 
 our @EXPORT = qw( send_mail );
 
-use version; our $VERSION = qv('1.3.3');
+use version; our $VERSION = qv('1.4.0');
 
 our $HOSTNAME = "localhost";
 our $PORT     = 25;
@@ -57,7 +57,8 @@ sub send_mail {
     $smtp->datasend("From: $from\n");
     $smtp->datasend("To: $to\n") if $to;
     $smtp->datasend("CC: $cc\n") if $cc;
-    $smtp->datasend("Subject: $subj\n\n");
+    $smtp->datasend("Subject: $subj\n") if $subj;
+    $smtp->datasend("\n");
 
     $smtp->datasend($msg);
 
