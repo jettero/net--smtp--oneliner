@@ -15,7 +15,7 @@ plan tests => 1;
 use Net::SMTP::OneLiner;
 
 $Net::SMTP::OneLiner::PORT     = 997;
-$Net::SMTP::OneLiner::HOSTNAME = "tachy.mei.net";
+$Net::SMTP::OneLiner::HOSTNAME = "yhcat.mei.net";
 $Net::SMTP::OneLiner::DEBUG    = 1;
 
 send_mail( "jetero\@cpan.org", "jettero\@cpan.org", "test - " . time, "This is your test... #2", 'paul@mei.net');
