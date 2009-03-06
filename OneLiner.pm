@@ -13,14 +13,16 @@ require Exporter;
 our @ISA = qw(Exporter);
 
 our @EXPORT = qw( send_mail );
-
-use version; our $VERSION = qv('1.4.0');
+our $VERSION = "2.0";
 
 our $HOSTNAME = "localhost";
 our $PORT     = 25;
 our $ELHO     = "localhost";
 our $DEBUG    = 0;
 our $TIMEO    = 20;
+
+our $CONTENT_TYPE      = "text/plain; charset=UTF-8";
+our $TRANSFER_ENCODING = "quoted-printable";
 
 1;
 
@@ -58,6 +60,8 @@ sub send_mail {
     $smtp->datasend("To: $to\n") if $to;
     $smtp->datasend("CC: $cc\n") if $cc;
     $smtp->datasend("Subject: $subj\n") if $subj;
+    $smtp->datasend("Content-Type: $CONTENT_TYPE");
+    $smtp->datasend("Content-Transfer-Encoding: $TRANSFER_ENCODING");
     $smtp->datasend("\n");
 
     $smtp->datasend($msg);
@@ -128,6 +132,14 @@ If this is set to true, OneLiner will tell Net::SMTP to spew forth many lines of
 =head2 $Net::SMTP::OneLiner::TIMEO = 20
 
 Use this to change the communication timeout (in seconds) with the SMTP host.
+
+=head2 $Net::SMTP::OneLiner::CONTENT_TYPE = "text/plain; charset=UTF-8"
+
+Use this to change the content type (e.g. text/html).  This only changes the header and does not alter the message in any way.
+
+=head2 $Net::SMTP::OneLiner::TRANSFER_ENCODING  = "quoted-printable"
+
+Use this to change the transfer encoding.  This only changes the header and does not alter the message in any way.
 
 =head1 Bugs
 
