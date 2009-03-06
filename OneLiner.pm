@@ -60,8 +60,8 @@ sub send_mail {
     $smtp->datasend("To: $to\n") if $to;
     $smtp->datasend("CC: $cc\n") if $cc;
     $smtp->datasend("Subject: $subj\n") if $subj;
-    $smtp->datasend("Content-Type: $CONTENT_TYPE");
-    $smtp->datasend("Content-Transfer-Encoding: $TRANSFER_ENCODING");
+    $smtp->datasend("Content-Type: $CONTENT_TYPE\n");
+    $smtp->datasend("Content-Transfer-Encoding: $TRANSFER_ENCODING\n");
     $smtp->datasend("\n");
 
     $smtp->datasend($msg);
