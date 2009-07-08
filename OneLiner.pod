@@ -1,7 +1,7 @@
 
 =head1 NAME
 
-Net::SMTP::OneLiner - extension that polutes the local namespace with a send_mail() function.
+Net::SMTP::OneLiner - extension that pollutes the local namespace with a send_mail() sub that sends mail
 
 =head1 A brief example
 
