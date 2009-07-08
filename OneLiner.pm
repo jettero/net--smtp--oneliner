@@ -1,5 +1,3 @@
-# vi:fdm=marker fdl=0 syntax=perl:
-# $Id: OneLiner.pm,v 1.1 2005/08/23 11:13:43 jettero Exp $
 
 package Net::SMTP::OneLiner;
 
@@ -12,7 +10,7 @@ require Exporter;
 
 our @ISA = qw(Exporter);
 
-our @EXPORT = qw( send_mail );
+our @EXPORT = qw( send_mail ); ## no critic
 our $VERSION = "2.0";
 
 our $HOSTNAME = "localhost";

@@ -1,5 +1,3 @@
-# vi:fdm=marker fdl=0 syntax=perl:
-# $Id: 07_send_two.t,v 1.1 2005/08/23 11:13:43 jettero Exp $
 
 use strict;
 use Test;
