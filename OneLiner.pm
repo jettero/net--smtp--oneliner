@@ -65,6 +65,8 @@ sub send_mail {
 
     $smtp->dataend;
     $smtp->quit;
+
+    return;
 }
 
 1;
