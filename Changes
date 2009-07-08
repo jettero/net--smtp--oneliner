@@ -1,3 +1,8 @@
+2.100: Wed Jul 08 2009
+   - cleaned up this distribution
+   - fixed various pod problems
+   - added critic stuff
+
 2.0: Fri Mar  6 11:26:01 EST 2009
    - ditched version.pm (doesn't work reliably)
    - added content encoding and transfers
