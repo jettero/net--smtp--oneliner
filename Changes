@@ -1,9 +1,10 @@
-2.100: Wed Jul 08 2009
+2.0005: Wed Jul 08 2009
    - cleaned up this distribution
    - fixed various pod problems
    - added critic stuff
    - fixed pet peve most hated bug ever (paul@cpan.org is not me,
      I am jettero@cpan.org)
+   - modernized the makefile and posted module on github
 
 2.0: Fri Mar  6 11:26:01 EST 2009
    - ditched version.pm (doesn't work reliably)

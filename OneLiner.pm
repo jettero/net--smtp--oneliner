@@ -12,7 +12,7 @@ require Exporter;
 our @ISA = qw(Exporter);
 
 our @EXPORT = qw( send_mail ); ## no critic
-our $VERSION = "2.0";
+our $VERSION = "2.0005";
 
 our $HOSTNAME = "localhost";
 our $PORT     = 25;
