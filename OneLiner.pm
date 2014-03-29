@@ -12,7 +12,7 @@ require Exporter;
 our @ISA = qw(Exporter);
 
 our @EXPORT = qw( send_mail ); ## no critic
-our $VERSION = "2.0005";
+our $VERSION = "2.0007";
 
 our $HOSTNAME = "localhost";
 our $PORT     = 25;
@@ -41,10 +41,10 @@ sub send_mail {
 
     croak "You need to specifie at least one recipient" unless (@$to + @$cc + @$bcc) > 0;
 
-    $smtp->mail($from);
-    $smtp->to(@$to, @$cc, @$bcc);
+    $smtp->mail($from) or croak $smtp->message;
+    $smtp->to(@$to, @$cc, @$bcc) or croak $smtp->message;
 
-    $smtp->data;
+    $smtp->data or croak $smtp->message;
 
     for ($from, @$to, @$cc) {
         $_ = "$labl->{$_} <$_>" if defined $labl->{$_};

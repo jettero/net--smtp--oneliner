@@ -6,6 +6,5 @@ OneLiner.pm
 OneLiner.pod
 README
 t/05_load_them.t
-t/07_send_one.t
 t/critic.t
 t/pod.t
