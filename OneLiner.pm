@@ -12,7 +12,7 @@ require Exporter;
 our @ISA = qw(Exporter);
 
 our @EXPORT = qw( send_mail ); ## no critic
-our $VERSION = "2.0007";
+our $VERSION = "2.0008";
 
 our $HOSTNAME = "localhost";
 our $PORT     = 25;
@@ -54,7 +54,7 @@ sub send_mail {
     $to = join(", ", @$to);
     $cc = join(", ", @$cc);
 
-    my $mid = $MESSAGE_ID || join(".", localtime, map {int rand localtime} 1..5);
+    my $mid = $MESSAGE_ID || join(".", time, map {int rand time} 1..5);
 
     $smtp->datasend("From: $from\n");
     $smtp->datasend("To: $to\n") if $to;
