@@ -21,7 +21,7 @@ our $DEBUG    = 0;
 our $TIMEO    = 20;
 
 our $CONTENT_TYPE      = "text/plain; charset=UTF-8";
-our $TRANSFER_ENCODING = "quoted-printable";
+our $TRANSFER_ENCODING = "8bit";
 
 sub send_mail {
     my ($from, $to, $subj, $msg, $cc, $bcc, $labl) = @_;
