@@ -22,6 +22,7 @@ our $TIMEO    = 20;
 
 our $CONTENT_TYPE      = "text/plain; charset=UTF-8";
 our $TRANSFER_ENCODING = "8bit";
+our $MESSAGE_ID;
 
 sub send_mail {
     my ($from, $to, $subj, $msg, $cc, $bcc, $labl) = @_;
@@ -53,12 +54,15 @@ sub send_mail {
     $to = join(", ", @$to);
     $cc = join(", ", @$cc);
 
+    my $mid = $MESSAGE_ID || join(".", localtime, map {int rand localtime} 1..5);
+
     $smtp->datasend("From: $from\n");
     $smtp->datasend("To: $to\n") if $to;
     $smtp->datasend("CC: $cc\n") if $cc;
     $smtp->datasend("Subject: $subj\n") if $subj;
     $smtp->datasend("Content-Type: $CONTENT_TYPE\n");
     $smtp->datasend("Content-Transfer-Encoding: $TRANSFER_ENCODING\n");
+    $smtp->datasend("Message-ID: $mid\n");
     $smtp->datasend("\n");
 
     $smtp->datasend($msg);
