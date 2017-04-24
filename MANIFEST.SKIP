@@ -3,3 +3,4 @@
 ^\.pm-desc.html
 MANIFEST.SKIP
 blib
+.travis.yml
