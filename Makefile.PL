@@ -22,7 +22,7 @@ WriteMakefile(
                 },
             },
 
-        LICENSE	=> 'Perl Artistic',
+        LICENSE	=> 'perl_5',
     ) : ()),
 
 );
