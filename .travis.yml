@@ -11,5 +11,5 @@ perl:
 script:
   - cpanm --notest Test::Pod
   - cpanm --notest Test::Perl::Critic
-  - perl Makefile.PL
+  - TEST_AUTHOR=1 perl Makefile.PL
   - TEST_AUTHOR=1 make test
