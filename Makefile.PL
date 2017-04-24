@@ -13,6 +13,14 @@ WriteMakefile(
         'Net::SMTP' => 0,
     },
 
+    ($ENV{TEST_AUTHOR} ? (
+            BUILD_REQUIRES => {
+                'Test::Perl::Critic' => 0,
+                'Test::Pod'          => 0,
+            }
+        ): ()
+    ),
+
     ($ExtUtils::MakeMaker::VERSION ge '6.48'? 
         (MIN_PERL_VERSION => 5.006001,
             META_MERGE => {
